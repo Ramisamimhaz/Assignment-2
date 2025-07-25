@@ -134,11 +134,182 @@
 .plant-card button:hover {
   background-color: #bf360c;
 }
+  /* Flower Section */
+  .flower {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.image-container {
+  position: relative;
+  width: 400px;
+  max-width: 90%;
+}
+.image-container img.main-img {
+  width: 100%;
+  border-radius: 4px;
+  filter: brightness(0.85);
+}
+.image-container img.badge {
+  position: absolute;
+  top: -80px;
+  right: -70px;
+  width: 200px;
+}
+.flower-content {
+  max-width: 500px;
+}
+.flower-content h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.flower-content ul {
+  padding-left: 20px;
+  color: #666;
+}
+.flower-content ul li {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+  /* Deals Section */
+
+  #deal-heading {
+  color: #e95a08;
+}
+.deal-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0;
+}
+.deal-description {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.deals-section {
+  max-width: 1250px;
+  width: 90%;
+  margin: 80px auto;
+}
+.box-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  align-items: stretch;
+}
+.deal-content {
+  margin-bottom: 50px;
+}
+.left-image {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  flex-direction: column;
+  gap: 20px;
+  background-size: cover;
+}
+.right-image {
+  width: 66%;
+  display: flex;
+  flex-direction: row;
+  background-size: cover;
+  height: calc((190px * 2) + 20px);
+}
+.image-box {
+  width: 100%;
+  height: 190px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.right-image .image-box {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.image-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background-color: rgba(0, 0, 0, 0.498);
+}
+.box-title {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  z-index: 1;
+  margin: 0;
+}
+.right-image .box-title {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.image-box a {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  color: white;
+  z-index: 1;
+}
+.right-image .image-box a {
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+}
+
+/*  Subscribe Section */
+.subscribe-section {
+  background: url(../Images/news-letter-bg.png)no-repeat center center/cover;
+  padding: 199px 0px 266px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.overlay h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+.overlay h1 span {
+  font-weight: bold;
+}
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+}
+.subscribe-form input[type="email"] {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  min-width: 550px;
+}
+.subscribe-form button {
+  padding: 12px 20px;
+  background-color: #f25c05;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
 
 
 
  /* Responsive media query 
- for mobile */
+  */
 
  @media screen and (max-width: 576px) {
   /* Navbar section */
@@ -169,14 +340,79 @@
   .banner-container h1 {
     font-size: 24px;
   }
-}
 
- /* Plants section adjustments */
+
+ /* Plants section  */
   .plants-container {
     grid-template-columns: repeat(2, 1fr);
   }
   .plant-card {
     width: 100%;
   }
+
+   /* Subscribe section  */
+  .subscribe-section {
+    padding: 60px 0px 80px 0px;
+  }
+  .overlay h1 {
+    font-size: 1.8rem;
+  }
+  .subtitle {
+    max-width: 300px;
+  }
+
+  /* Flower section  */
+  .section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .flower-content ul {
+    text-align: left;
+  }
+  .image-container img.badge {
+    display: none;
+  }
+
+ /* Subscribe form input */
+  .subscribe-form input[type="email"] {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    min-width: 250px;
+  }
+
+  /* Deals section  */
+  .box-container {
+    flex-direction: column;
+  }
+  .hide-on-mobile {
+    display: none;
+  }
+  .left-image,
+  .right-image {
+    width: 100%;
+  }
+
+  .right-image {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .right-image .image-box {
+    height: 190px;
+    width: 100%;
+  }
+  .box-title,
+  .right-image .box-title {
+    font-size: 1.25rem;
+  }
+  .right-image .image-box a {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+
+}
+
 
   
